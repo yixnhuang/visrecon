@@ -35,7 +35,8 @@ colmap mapper \
   --output_path "$SPARSE_DIR" \
   --Mapper.multiple_models 1 \
   --Mapper.init_min_tri_angle 2 \
-  --Mapper.min_num_matches 10 || log_and_exit "Sparse reconstruction failed"
+  --Mapper.min_num_matches 10 \
+  --Mapper.num_threads 24 || log_and_exit "Sparse reconstruction failed"
 
 echo "3.5 Selecting best sparse model..."
 BEST_MODEL=""

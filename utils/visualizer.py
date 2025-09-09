@@ -64,7 +64,7 @@ def main():
     args = parser.parse_args()
 
     # Prepend datasets path to the project directory
-    full_project_dir = os.path.join("../datasets", args.project_dir)
+    full_project_dir = os.path.join("../../datasets", args.project_dir)
     load_and_show_model(full_project_dir, args.type)
 
 
