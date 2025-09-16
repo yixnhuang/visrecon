@@ -35,7 +35,7 @@ def save_image(save_dir, image_index, color_image, depth_image):
     print(f"[{image_index}] Saved color image to {color_path}")
     print(f"[{image_index}] Saved depth image to {depth_path}")
 
-def save_rgbd_with_mask(save_dir, image_index, color_image, depth_image, depth_threshold=800):
+def save_rgbd_with_mask(save_dir, image_index, color_image, depth_image, depth_threshold=600):
     """
     Save RGB-D images with optional masking based on depth and green-screen background removal.
     
