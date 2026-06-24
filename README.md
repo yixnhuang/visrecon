@@ -77,4 +77,4 @@ VisRecon provides utility scripts and self-collected datasets to facilitate mult
 
 ## Contact
 
-If you have any questions about this repository or would like to collaborate with me, feel free to reach out via email at yixuanhm@gmail.com.
+If you have any questions about this repository or would like to collaborate with me, feel free to reach out via email at `yixnhuang@gmail.com` or through [contact](https://yixuanhuang04.github.io/contact/).
