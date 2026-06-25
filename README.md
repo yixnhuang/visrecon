@@ -18,8 +18,8 @@ VisRecon provides utility scripts and self-collected datasets to facilitate mult
 * Organized for **direct integration with COLMAP pipelines**.
 * **Available datasets:**
 
-  * [Obj3D](https://huggingface.co/datasets/yixuan-huang/Obj3D) – multi-object 3D reconstruction dataset
-  * [Plant3D](https://huggingface.co/datasets/yixuan-huang/Plant3D) – plant-focused 3D reconstruction dataset
+  * [Obj3D](https://huggingface.co/datasets/yixuanhuang04/Obj3D) – multi-object 3D reconstruction dataset
+  * [Plant3D](https://huggingface.co/datasets/yixuanhuang04/Plant3D) – plant-focused 3D reconstruction dataset
 
 ### How to download datasets
 
@@ -77,4 +77,4 @@ VisRecon provides utility scripts and self-collected datasets to facilitate mult
 
 ## Contact
 
-If you have any questions about this repository or would like to collaborate with me, feel free to reach out via email at `yixnhuang@gmail.com` or through [contact](https://yixuanhuang04.github.io/contact/).
+If you have any questions about this repository or would like to collaborate with me, feel free to reach out via email at `yixnhuang@gmail.com` or through [contact](https://yixnhuang.github.io/contact/).
