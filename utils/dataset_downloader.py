@@ -37,8 +37,8 @@ def parse_args():
         description="Download a specific subset from a Hugging Face dataset repository."
     )
     parser.add_argument(
-        "--repo_id", type=str, default="yixuan-huang/Obj3D",
-        help="Hugging Face dataset repository ID (default: 'yixuan-huang/Obj3D')"
+        "--repo_id", type=str, required=True,
+        help="Hugging Face dataset repository ID, such as 'username/dataset'"
     )
     parser.add_argument(
         "--subset", type=str, required=True,
@@ -56,6 +56,4 @@ if __name__ == "__main__":
     download_subset(args.repo_id, args.subset, args.local_dir)
 
     # Example usage:
-    # python download_subset.py --subset human
-    # python download_subset.py --subset human/human_000
-    # python download_subset.py --repo_id yixuan-huang/Plant3D --subset Plant_000
+    # python dataset_downloader.py --repo_id username/dataset --subset path/to/subset

@@ -1,80 +1,103 @@
 # VisRecon
 
-Contributed by Yixuan Huang
+VisRecon is a research-oriented toolkit for capturing RGB-D imagery, preparing multi-view datasets, running COLMAP reconstruction workflows, and inspecting the resulting point clouds or meshes. It combines small command-line utilities with sample outputs from experiments using an Intel RealSense camera.
 
-**A research-oriented toolkit for multi-view 3D reconstruction.**
-VisRecon provides utility scripts and self-collected datasets to facilitate multi-view reconstruction experiments based on [COLMAP](https://colmap.github.io/).
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
+![Reconstruction](https://img.shields.io/badge/Reconstruction-COLMAP-4C8BF5)
+![Capture](https://img.shields.io/badge/Capture-RealSense-0071C5)
+
+## Overview
+
+The repository supports a compact multi-view reconstruction workflow: capture or download image sets, prepare them for reconstruction, run a configurable COLMAP pipeline, and visualize the generated model. Samples and rendered demonstrations are included to make the expected inputs and outputs easier to understand.
 
 ## Features
 
-* Utility scripts for **preprocessing, visualization, and handling 3D reconstruction data**.
-* **Self-collected multi-view datasets** captured with Intel RealSense D436.
-* Demo scripts to **quickly run reconstruction pipelines** and visualize results.
+- Capture RGB-D sequences from supported Intel RealSense cameras
+- Prepare color and depth images for reconstruction experiments
+- Download selected folders from a Hugging Face dataset repository
+- Run a scripted COLMAP reconstruction pipeline
+- Visualize sparse or dense point clouds and meshes with Open3D
+- Review included sample images and reconstruction previews
 
-## Dataset
+## Structure
 
-* Captured using **Intel RealSense D436**.
-* Contains multiple images per scene suitable for multi-view reconstruction.
-* Organized for **direct integration with COLMAP pipelines**.
-* **Available datasets:**
+```text
+.
+├── demo/          # Rendered reconstruction examples
+├── samples/       # Sample multi-view images
+├── utils/         # Capture, download, preparation, and visualization tools
+├── requirements.txt
+└── LICENSE
+```
 
-  * [Obj3D](https://huggingface.co/datasets/yixuanhuang04/Obj3D) – multi-object 3D reconstruction dataset
-  * [Plant3D](https://huggingface.co/datasets/yixuanhuang04/Plant3D) – plant-focused 3D reconstruction dataset
+## Requirements
 
-### How to download datasets
+- Python 3.10 or later
+- [COLMAP](https://colmap.github.io/) available from the command line
+- A supported Intel RealSense device for capture workflows
 
-* Download human dataset:
+Install the Python dependencies:
 
-  ```bash
-  python download_dataset.py --subset human
-  ```
-* Download a specific human subset (`human_000`):
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-  ```bash
-  python download_dataset.py --subset human/human_000
-  ```
-* Download plant dataset:
+On Windows, activate the environment with `.venv\Scripts\activate`.
 
-  ```bash
-  python download_dataset.py --repo_id yixuan-huang/Plant3D --subset Plant
-  ```
+## Dataset Download
 
-## Installation & Requirements
+Download a folder from a Hugging Face dataset repository by supplying its repository ID:
 
-* **Python 3.10** or later.
-* COLMAP installed and accessible from your environment.
-* Install Python dependencies:
+```bash
+python utils/dataset_downloader.py \
+  --repo_id username/dataset \
+  --subset path/to/subset \
+  --local_dir ./data
+```
 
-  ```bash
-  pip install -r requirements.txt
-  ```
-* Standard Python libraries are included in `requirements.txt`: `numpy`, `opencv-python`, `open3d`, `pyrealsense2`, `huggingface-hub`
+## Usage
 
-## Usage Workflow
+### Capture images
 
-1. **Download datasets** as shown above.
+```bash
+python utils/image_fetcher.py --help
+```
 
-2. **Modify COLMAP run script** (`run_colmap_pipeline.sh`)
+### Prepare images
 
-   * Update the dataset folder paths at the top of the script to point to your downloaded images.
+```bash
+python utils/image_preparer.py --help
+```
 
-3. **Run COLMAP reconstruction**
+### Run reconstruction
 
-   ```bash
-   bash run_colmap_pipeline.sh
-   ```
+Review the paths and options near the beginning of `utils/run_colmap_pipeline.sh`, then run:
 
-4. **Visualize results** using the provided visualization scripts:
+```bash
+bash utils/run_colmap_pipeline.sh
+```
 
-   ```bash
-   python visualizer.py
-   ```
+### Visualize a model
+
+```bash
+python utils/visualizer.py --help
+```
+
+## Samples
+
+The `samples` directory contains a representative input sequence. The `demo` directory contains rendered mesh and point-cloud results for plant reconstructions.
 
 ## Contributing
 
-* Contributions are welcome! Please open an issue or pull request for **bug fixes, improvements, or new utility scripts**.
-* If you use this repository in your research, please **cite accordingly**.
+Focused bug fixes, documentation improvements, and reusable reconstruction utilities are welcome. Open an issue before proposing a substantial workflow change.
+
+## License
+
+The source code in this repository is available under the [MIT License](LICENSE). Dataset and third-party tool licenses remain separate and should be reviewed at their respective sources.
 
 ## Contact
 
-If you have any questions about this repository or would like to collaborate with me, feel free to reach out via email at `yixnhuang@gmail.com` or through [contact](https://yixnhuang.github.io/contact/).
+For questions or collaboration, contact [Yixuan Huang](mailto:yixnhuang@gmail.com) or visit [yixuanhuang.com](https://yixuanhuang.com).
