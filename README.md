@@ -3,9 +3,9 @@
 VisRecon is a research-oriented toolkit for capturing RGB-D imagery, preparing multi-view datasets, running COLMAP reconstruction workflows, and inspecting the resulting point clouds or meshes. It combines small command-line utilities with sample outputs from experiments using an Intel RealSense camera.
 
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Experimental-orange)](#project-status)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
 ![Reconstruction](https://img.shields.io/badge/Reconstruction-COLMAP-4C8BF5)
-![Capture](https://img.shields.io/badge/Capture-RealSense-0071C5)
 
 ## Overview
 
@@ -90,6 +90,12 @@ python utils/visualizer.py --help
 
 The `samples` directory contains a representative input sequence. The `demo` directory contains rendered mesh and point-cloud results for plant reconstructions.
 
+## Project Status
+
+Experimental. VisRecon is retained as a research toolkit and reference workflow.
+Its utilities require local hardware, datasets, and COLMAP configuration and
+should not be treated as a production reconstruction system.
+
 ## Contributing
 
 Focused bug fixes, documentation improvements, and reusable reconstruction utilities are welcome. Open an issue before proposing a substantial workflow change.
@@ -100,4 +106,8 @@ The source code in this repository is available under the [MIT License](LICENSE)
 
 ## Contact
 
-For questions or collaboration, contact [Yixuan Huang](mailto:yixnhuang@gmail.com) or visit [yixuanhuang.com](https://yixuanhuang.com).
+For questions or collaboration, use the contact details below or consult the
+website for the latest information.
+
+- Website: [yixuanhuang.com](https://yixuanhuang.com)
+- Email: [yixnhuang@gmail.com](mailto:yixnhuang@gmail.com)
